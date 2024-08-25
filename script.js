@@ -135,3 +135,24 @@ gsap.from("#contact form", {
     delay: 0.5,
     ease: "power3.out"
 });
+
+// Custom Cursor Functionality
+document.addEventListener("mousemove", (e) => {
+    const cursor = document.querySelector(".custom-cursor");
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+});
+
+document.querySelectorAll("a, button").forEach((el) => {
+    el.addEventListener("mouseover", () => {
+        document.querySelector(".custom-cursor").classList.add("hover");
+    });
+    el.addEventListener("mouseleave", () => {
+        document.querySelector(".custom-cursor").classList.remove("hover");
+    });
+});
+
+// Smooth Fade-In on Page Load
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
