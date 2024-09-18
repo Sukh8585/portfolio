@@ -86,6 +86,31 @@ gsap.from("#about p", {
     ease: "power3.out"
 });
 
+gsap.from("#skills h2", {
+    scrollTrigger: {
+        trigger: "#skills",
+        start: "top 80%",
+        scroller: "[data-scroll-container]",
+    },
+    duration: 1.5,
+    y: 50,
+    opacity: 0,
+    ease: "power3.out"
+});
+
+gsap.from(".skill", {
+    scrollTrigger: {
+        trigger: ".skills-container",
+        start: "top 80%",
+        scroller: "[data-scroll-container]",
+    },
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    stagger: 0.2,
+    ease: "power3.out"
+});
+
 gsap.from("#projects h2", {
     scrollTrigger: {
         trigger: "#projects",
@@ -136,23 +161,27 @@ gsap.from("#contact form", {
     ease: "power3.out"
 });
 
-// Custom Cursor Functionality
-document.addEventListener("mousemove", (e) => {
-    const cursor = document.querySelector(".custom-cursor");
+// Custom Cursor
+const cursor = document.querySelector('.custom-cursor');
+
+document.addEventListener('mousemove', (e) => {
     cursor.style.left = `${e.clientX}px`;
     cursor.style.top = `${e.clientY}px`;
 });
 
-document.querySelectorAll("a, button").forEach((el) => {
-    el.addEventListener("mouseover", () => {
-        document.querySelector(".custom-cursor").classList.add("hover");
+document.querySelectorAll('a, button').forEach((el) => {
+    el.addEventListener('mouseover', () => {
+        cursor.classList.add('hover');
     });
-    el.addEventListener("mouseleave", () => {
-        document.querySelector(".custom-cursor").classList.remove("hover");
+    el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hover');
     });
 });
 
-// Smooth Fade-In on Page Load
+// Introductory Animation
 window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
+    setTimeout(() => {
+        document.getElementById('intro-animation').classList.add('fade-out');
+        document.body.classList.add('loaded');
+    }, 1500);
 });

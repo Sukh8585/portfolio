@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parth's Portfolio</title>
+    <title>Sukhmanjeet Singh's Portfolio</title>
     <link rel="stylesheet" href="https://unpkg.com/locomotive-scroll@4.1.3/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body data-scroll-container>
 
+    <!-- Introductory Animation -->
+    <div id="intro-animation">
+        <div class="intro-logo">Sukhmanjeet Singh's Portfolio</div>
+    </div>
+
     <header data-scroll-section>
-        <div class="logo">Parth's Portfolio</div>
+        <div class="logo">Sukhmanjeet Singh's Portfolio</div>
         <nav>
             <ul>
                 <li><a href="#about" data-scroll-to>About</a></li>
+                <li><a href="#skills" data-scroll-to>Skills</a></li>
                 <li><a href="#projects" data-scroll-to>Projects</a></li>
                 <li><a href="#contact" id="contactheader" data-scroll-to>Contact</a></li>
             </ul>
@@ -27,51 +34,98 @@
         <section class="hero" data-scroll data-scroll-speed="2">
             <div class="hero-content">
                 <h1>Welcome to My Portfolio</h1>
-                <p>I am Parth, a passionate developer focused on creating meaningful digital experiences.</p>
+                <p>I am Sukhmanjeet Singh, a passionate developer focused on creating meaningful digital experiences.</p>
                 <a href="#projects" class="hero-button" data-scroll-to>View My Work</a>
             </div>
+            <!-- Spline 3D Animation Embed -->
+            <iframe src="https://my.spline.design/untitled-3ca6c50230e0cb6cc40bd17dfe889bb1/" frameborder="0" width="100%" height="500px"></iframe>
         </section>
+        
 
         <section id="about" class="about" data-scroll data-scroll-speed="1">
             <h2>About Me</h2>
-            <p>Hello! I'm Parth, a developer with a passion for web technologies and software development. I enjoy solving complex problems and turning ideas into reality. With experience in multiple programming languages and frameworks, I am always eager to learn new things and take on challenges.</p>
+            <p>Hello! I'm Sukhmanjeet Singh, a passionate and ambitious Computer Science student at South Dakota State University with hands-on experience in full-stack development. I enjoy solving complex technical challenges and delivering scalable, efficient code. With expertise in Dart, JavaScript, and Flutter, I’m always eager to learn and grow, focusing on creating meaningful and user-friendly digital experiences.</p>
+        </section>
+
+        <section id="skills" class="skills" data-scroll data-scroll-speed="1">
+            <h2>My Skills</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                    <ul>
+                        <li><i class="fab fa-js-square"></i> JavaScript</li>
+                        <li><i class="fab fa-python"></i> Python</li>
+                        <li><i class="fas fa-cplusplus"></i> C/C++</li>
+                        <li><i class="fab fa-dart"></i> Dart</li>
+                    </ul>
+                </div>
+                <div class="skill">
+                    <h3><i class="fas fa-laptop-code"></i> Frameworks & Libraries</h3>
+                    <ul>
+                        <li><i class="fab fa-react"></i> Flutter</li>
+                        <li><i class="fab fa-node"></i> Node.js & Express.js</li>
+                        <li><i class="fas fa-server"></i> Django</li>
+                        <li><i class="fab fa-socket-io"></i> Socket.io</li>
+                    </ul>
+                </div>
+                <div class="skill">
+                    <h3><i class="fas fa-database"></i> Databases</h3>
+                    <ul>
+                        <li><i class="fas fa-database"></i> PostgreSQL</li>
+                        <li><i class="fas fa-database"></i> MongoDB</li>
+                        <li><i class="fas fa-database"></i> SQL</li>
+                    </ul>
+                </div>
+                <div class="skill">
+                    <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+                    <ul>
+                        <li><i class="fab fa-github"></i> Git & GitHub</li>
+                        <li><i class="fab fa-docker"></i> Docker</li>
+                        <li><i class="fab fa-aws"></i> AWS</li>
+                        <li><i class="fas fa-cloud"></i> Heroku</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <section id="projects" class="projects" data-scroll data-scroll-speed="3">
             <h2>My Projects</h2>
             <div class="project-gallery">
                 <div class="project-card">
-                    <img src="https://source.unsplash.com/random/300x200?tech" alt="Project 1">
-                    <h3>Project 1</h3>
-                    <p>Brief description of Project 1.</p>
+                    <img src="https://source.unsplash.com/random/300x200?real-estate" alt="Real Estate Investment Platform">
+                    <h3>Real Estate Investment Platform</h3>
+                    <p>Developed a website allowing individuals and companies to invest in real estate projects. Implemented project listings, investment tracking, and secure payment processing using HTML, CSS, JavaScript, and Node.js.</p>
                 </div>
                 <div class="project-card">
-                    <img src="https://source.unsplash.com/random/300x200?code" alt="Project 2">
-                    <h3>Project 2</h3>
-                    <p>Brief description of Project 2.</p>
+                    <img src="https://source.unsplash.com/random/300x200?ecommerce" alt="Amazon Clone">
+                    <h3>Amazon Clone</h3>
+                    <p>Created a dual-interface e-commerce app using Flutter and Node.js. The app features product ratings, shopping cart functionality, secure payment options, and CRUD operations for both users and administrators.</p>
                 </div>
                 <div class="project-card">
-                    <img src="https://source.unsplash.com/random/300x200?development" alt="Project 3">
-                    <h3>Project 3</h3>
-                    <p>Brief description of Project 3.</p>
+                    <img src="https://source.unsplash.com/random/300x200?food" alt="Beef Grading Application">
+                    <h3>Beef Grading Application</h3>
+                    <p>Developed a mobile application to grade beef based on parameters like fat content and color vividness. Utilized Flutter for the frontend and Django (Python) for the backend, with PostgreSQL for data storage.</p>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="contact" data-scroll data-scroll-speed="1">
             <h2>Contact Me</h2>
-            <p>Interested in working together? Feel free to reach out via the form below.</p>
+            <p>Interested in working together or have questions? Feel free to reach out!</p>
             <form>
                 <input type="text" placeholder="Your Name" required>
                 <input type="email" placeholder="Your Email" required>
                 <textarea placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
+            <p>You can also reach me directly:</p>
+            <p>Email: sukhmanjeetsingh7@gmail.com</p>
+            <p>Phone: 605-592-4886</p>
         </section>
     </div>
 
     <footer data-scroll-section>
-        <p>&copy; 2024 Parth's Portfolio. All rights reserved.</p>
+        <p>&copy; 2024 Sukhmanjeet Singh's Portfolio. All rights reserved.</p>
     </footer>
 
     <div class="custom-cursor"></div>

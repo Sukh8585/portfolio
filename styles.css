@@ -22,6 +22,46 @@ body.loaded {
     opacity: 1;
 }
 
+/* Introductory Animation */
+#intro-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+}
+
+#intro-animation.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.intro-logo {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    opacity: 0;
+    animation: fadeInLogo 1.5s ease-in forwards;
+}
+
+@keyframes fadeInLogo {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -83,24 +123,30 @@ nav ul li a:hover {
     background-position: center;
     z-index: -1;
 }
+iframe {
+    border: none;
+    width: 70%;
+    height: 500px;
+    max-width: 100%;
+}
+
+
 
 .hero {
-    height: 80vh;
+    position: relative;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 20px;
     text-align: center;
-    margin-top: 200px;
-    margin-bottom: 50px;
-    /* background: linear-gradient(135deg, #333, #444); */
-    background: black;
+    overflow: hidden; /* Ensure the animation stays within bounds */
 }
 
 .hero-content {
-    max-width: 800px;
-    color: var(--secondary-color);
+    z-index: 2; /* To make sure the content appears over the animation */
+    color: #fff; /* Adjust text color for better visibility */
 }
+
 
 .hero h1 {
     font-size: 3rem;
@@ -144,14 +190,14 @@ nav ul li a:hover {
     left: 100%;
 }
 
-.about, .projects, .contact {
+.about, .skills, .projects, .contact {
     padding: 100px 20px;
     text-align: center;
     background-color: var(--accent-color);
     color: var(--secondary-color);
 }
 
-.about h2, .projects h2, .contact h2 {
+.about h2, .skills h2, .projects h2, .contact h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
     opacity: 0;
@@ -160,10 +206,56 @@ nav ul li a:hover {
 }
 
 .about[data-scroll] h2, 
+.skills[data-scroll] h2, 
 .projects[data-scroll] h2, 
 .contact[data-scroll] h2 {
     opacity: 1;
     transform: translateY(0);
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.skill {
+    width: 30%;
+    margin-bottom: 30px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.skill ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.skill h3 i, 
+.skill ul li i {
+    margin-right: 10px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.skill:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
 }
 
 .project-gallery {
@@ -178,9 +270,10 @@ nav ul li a:hover {
     background-color: var(--accent-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    transition-delay: 100ms;
     color: var(--secondary-color);
     border-radius: 10px;
+    border-width: 2px;
+    border-color: var(--primary-color);
 }
 
 .project-card:hover {
@@ -232,8 +325,6 @@ nav ul li a:hover {
 
 .contact button:hover {
     background-color: var(--hover-color);
-
-    box-shadow: 0 0 15px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
     transform: scale(1.1);
 }
 
