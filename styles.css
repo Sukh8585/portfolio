@@ -22,6 +22,28 @@ body.loaded {
     opacity: 1;
 }
 
+/* Development Banner Styles */
+#development-banner {
+    background-color: #ff6348;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#development-banner p {
+    margin: 0;
+}
+
+header {
+    margin-top: 40px; /* Adjust to avoid overlap with the banner */
+}
+
 /* Introductory Animation */
 #intro-animation {
     position: fixed;
@@ -123,14 +145,13 @@ nav ul li a:hover {
     background-position: center;
     z-index: -1;
 }
+
 iframe {
     border: none;
     width: 70%;
     height: 500px;
     max-width: 100%;
 }
-
-
 
 .hero {
     position: relative;
@@ -139,14 +160,13 @@ iframe {
     align-items: center;
     justify-content: center;
     text-align: center;
-    overflow: hidden; /* Ensure the animation stays within bounds */
+    overflow: hidden;
 }
 
 .hero-content {
-    z-index: 2; /* To make sure the content appears over the animation */
-    color: #fff; /* Adjust text color for better visibility */
+    z-index: 2;
+    color: #fff;
 }
-
 
 .hero h1 {
     font-size: 3rem;
@@ -197,22 +217,6 @@ iframe {
     color: var(--secondary-color);
 }
 
-.about h2, .skills h2, .projects h2, .contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.about[data-scroll] h2, 
-.skills[data-scroll] h2, 
-.projects[data-scroll] h2, 
-.contact[data-scroll] h2 {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .skills-container {
     display: flex;
     justify-content: space-around;
@@ -245,19 +249,6 @@ iframe {
     margin-bottom: 10px;
 }
 
-.skill h3 i, 
-.skill ul li i {
-    margin-right: 10px;
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    vertical-align: middle;
-}
-
-.skill:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
-}
-
 .project-gallery {
     display: flex;
     justify-content: space-between;
@@ -274,11 +265,6 @@ iframe {
     border-radius: 10px;
     border-width: 2px;
     border-color: var(--primary-color);
-}
-
-.project-card:hover {
-    transform: translateY(-10px) scale(1.05) !important;
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4) !important;
 }
 
 .project-card img {
@@ -333,33 +319,6 @@ footer {
     background-color: var(--accent-color);
     color: var(--secondary-color);
     text-align: center;
-}
-
-#backToTop {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    background-color: var(--primary-color);
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 10px;
-    transition: background-color 0.3s;
-}
-
-#backToTop:hover {
-    background-color: var(--hover-color);
-}
-
-.section-separator {
-    height: 2px;
-    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
-    margin: 50px 0;
 }
 
 .custom-cursor {
